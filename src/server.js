@@ -211,9 +211,21 @@ app.get('/api/sync/balances', async (req, res) => {
 
     res.json({ tarjetas: result.rows });
   } catch (err) {
-    console.error('[SYNC] Error al consultar balances:', err.message);
-    res.status(500).json({ error: 'Error interno de base de datos' });
-  }
+
+  console.error("ERROR COMPLETO:");
+  console.error(err);
+
+  console.error("MESSAGE:");
+  console.error(err.message);
+
+  console.error("STACK:");
+  console.error(err.stack);
+
+  res.status(500).json({
+    error: err.message
+  });
+
+}
 });
 
 

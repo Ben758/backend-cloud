@@ -149,7 +149,7 @@ fun LoginScreen(navController: NavHostController) {
                             }
                             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                                 cargando = false
-                                mensajeError = "Error de conexión con el servidor"
+                                mensajeError = "Error de conexión: ${t.localizedMessage}"
                             }
                         })
                     },

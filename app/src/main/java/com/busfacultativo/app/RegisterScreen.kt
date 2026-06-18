@@ -116,7 +116,7 @@ fun PantallaRegistro(navController: NavHostController) {
                     }
                     override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                         cargando = false
-                        Toast.makeText(context, "Error de conexión", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Error de conexión: ${t.localizedMessage}", Toast.LENGTH_SHORT).show()
                     }
                 })
             },
