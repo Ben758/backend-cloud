@@ -212,17 +212,13 @@ app.get('/api/sync/balances', async (req, res) => {
     res.json({ tarjetas: result.rows });
   } catch (err) {
 
+  console.error("================================");
   console.error("ERROR COMPLETO:");
-  console.error(err);
-
-  console.error("MESSAGE:");
-  console.error(err.message);
-
-  console.error("STACK:");
-  console.error(err.stack);
+  console.dir(err, { depth: null });
+  console.error("================================");
 
   res.status(500).json({
-    error: err.message
+    error: String(err)
   });
 
 }
