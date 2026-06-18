@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bus-facultativo-backend
+    runtime: node
+    rootDir: backend-cloud
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false # Debes configurar esto manualmente en el dashboard de Render o usar un Secret Group
+      - key: PORT
+        value: 10000
